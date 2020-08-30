@@ -12,6 +12,7 @@ import followRoutes from './src/routes/followRoutes';
 import beatRoutes from './src/routes/beatRoutes';
 import dropRoutes from './src/routes/dropRoutes';
 import wantRoutes from './src/routes/wantRoutes';
+import favRoutes from './src/routes/favRoutes';
 
 class App {
   constructor() {
@@ -34,6 +35,7 @@ class App {
     this.app.use('/beat', beatRoutes);
     this.app.use('/drop', dropRoutes);
     this.app.use('/want', wantRoutes);
+    this.app.use('/fav', favRoutes);
   }
 }
 

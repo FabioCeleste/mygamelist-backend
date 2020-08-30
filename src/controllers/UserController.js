@@ -34,6 +34,7 @@ class UserController {
           { association: 'beatGame', attributes: ['id', 'game_name'], through: { attributes: [] } },
           { association: 'dropGame', attributes: ['id', 'game_name'], through: { attributes: [] } },
           { association: 'wantGame', attributes: ['id', 'game_name'], through: { attributes: [] } },
+          { association: 'favGame', attributes: ['id', 'game_name'], through: { attributes: [] } },
         ],
 
         attributes: ['user_name', 'id', 'email'],
