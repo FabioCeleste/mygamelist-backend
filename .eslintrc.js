@@ -22,5 +22,6 @@ module.exports = {
     'max-len': 0,
     camelcase: 0,
     eqeqeq: 0,
+    radix: 0,
   },
 };

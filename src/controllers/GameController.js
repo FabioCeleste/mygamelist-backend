@@ -2,10 +2,15 @@ import Sequelize from 'sequelize';
 
 import Game from '../models/Game';
 
+import paginated from '../middlewares/paginated';
+
 class GameController {
   async index(req, res) {
     const { letter } = req.params;
-    console.log(letter);
+
+    const page = parseInt(req.query.page);
+    const limit = parseInt(req.query.limit);
+
     const games = await Game.findAll({
       where: {
         game_name: {
@@ -13,7 +18,10 @@ class GameController {
         },
       },
     });
-    res.json(games);
+
+    const results = paginated(games, page, limit);
+
+    res.json(results);
   }
 
   async show(req, res) {
