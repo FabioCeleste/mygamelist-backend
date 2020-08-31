@@ -23,5 +23,6 @@ module.exports = {
     camelcase: 0,
     eqeqeq: 0,
     radix: 0,
+    'array-callback-return': 0,
   },
 };
