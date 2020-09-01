@@ -15,7 +15,7 @@ class TokenController {
       const { id } = user;
       if (await user.userIsValid(password)) {
         const token = jwt.sign({ id, email }, process.env.TKSECRET, { expiresIn: process.env.TKEXP });
-        return res.json({ token });
+        return res.json({ token, user: { name: user.user_name, id: user.id, email } });
       }
       return res.status(401).json({ errors: ['Senha ou email invalido'] });
     } catch (e) {

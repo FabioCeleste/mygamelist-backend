@@ -3,6 +3,10 @@ dotenv.config();
 import './src/database';
 
 import express, { urlencoded } from 'express';
+import cors from 'cors';
+import helmet from 'helmet';
+
+import corsOptions from './src/config/cors';
 
 import userRoutes from './src/routes/userRoutes';
 import populateRoutes from './src/routes/populateRoutes';
@@ -22,6 +26,8 @@ class App {
   }
 
   middlewares() {
+    this.app.use(cors(corsOptions));
+    this.app.use(helmet());
     this.app.use(urlencoded({ extended: true }));
     this.app.use(express.json());
   }
