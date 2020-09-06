@@ -35,6 +35,7 @@ class UserController {
           { association: 'dropGame', attributes: ['id', 'game_name'], through: { attributes: [] } },
           { association: 'wantGame', attributes: ['id', 'game_name'], through: { attributes: [] } },
           { association: 'favGame', attributes: ['id', 'game_name'], through: { attributes: [] } },
+          { association: 'pictures', attributes: ['filename', 'originalname', 'url'] },
         ],
 
         attributes: ['user_name', 'id', 'email'],

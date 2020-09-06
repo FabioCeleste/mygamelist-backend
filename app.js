@@ -5,6 +5,7 @@ import './src/database';
 import express, { urlencoded } from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
+import { resolve } from 'path';
 
 import corsOptions from './src/config/cors';
 
@@ -17,6 +18,7 @@ import beatRoutes from './src/routes/beatRoutes';
 import dropRoutes from './src/routes/dropRoutes';
 import wantRoutes from './src/routes/wantRoutes';
 import favRoutes from './src/routes/favRoutes';
+import profPicRoutes from './src/routes/profPicRoutes';
 
 class App {
   constructor() {
@@ -30,6 +32,7 @@ class App {
     this.app.use(helmet());
     this.app.use(urlencoded({ extended: true }));
     this.app.use(express.json());
+    this.app.use(express.static(resolve(__dirname, 'uploads')));
   }
 
   routes() {
@@ -42,6 +45,7 @@ class App {
     this.app.use('/drop', dropRoutes);
     this.app.use('/want', wantRoutes);
     this.app.use('/fav', favRoutes);
+    this.app.use('/', profPicRoutes);
   }
 }
 

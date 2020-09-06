@@ -16,6 +16,8 @@ export default (model, page, limit) => {
     };
   }
 
-  results.results = model.slice(startIndex, endIndex);
+  results.total = model.length;
+
+  results.info = model.slice(startIndex, endIndex);
   return results;
 };

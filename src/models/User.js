@@ -62,5 +62,6 @@ export default class User extends Model {
     this.belongsToMany(models.Game, { foreignKey: 'user_id', as: 'dropGame', through: 'user_drop' });
     this.belongsToMany(models.Game, { foreignKey: 'user_id', as: 'wantGame', through: 'user_want' });
     this.belongsToMany(models.Game, { foreignKey: 'user_id', as: 'favGame', through: 'fav_games' });
+    this.hasMany(models.Picture, { foreignKey: 'user_id', as: 'pictures' });
   }
 }
