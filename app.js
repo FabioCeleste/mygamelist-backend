@@ -19,6 +19,7 @@ import dropRoutes from './src/routes/dropRoutes';
 import wantRoutes from './src/routes/wantRoutes';
 import favRoutes from './src/routes/favRoutes';
 import profPicRoutes from './src/routes/profPicRoutes';
+import resetRoutes from './src/routes/resetRoutes';
 
 class App {
   constructor() {
@@ -46,6 +47,7 @@ class App {
     this.app.use('/want', wantRoutes);
     this.app.use('/fav', favRoutes);
     this.app.use('/', profPicRoutes);
+    this.app.use('/', resetRoutes);
   }
 }
 
