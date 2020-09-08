@@ -24,7 +24,7 @@ class ResetController {
 
     const HelperOptions = {
       from: 'Fabio cel',
-      to: 'fabio.wow.lol@gmail.com',
+      to: email,
       subject: 'Password reset',
       template: 'reset',
       context: {

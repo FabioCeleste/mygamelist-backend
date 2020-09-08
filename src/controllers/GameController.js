@@ -17,6 +17,7 @@ class GameController {
           [Sequelize.Op.iLike]: `${letter}%`,
         },
       },
+      order: [['game_name', 'DESC']],
     });
 
     const results = paginated(games, page, limit);
