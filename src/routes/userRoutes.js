@@ -10,6 +10,7 @@ routes.get('/index', userController.index);
 
 routes.post('/new-user', userController.store);
 routes.get('/show/:id', userController.show);
+routes.get('/search/:letter', userController.search);
 routes.put('/update', loginRequired, userController.update);
 routes.delete('/delete', loginRequired, userController.delete);
 

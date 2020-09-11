@@ -1,3 +1,4 @@
+import Sequelize from 'sequelize';
 import User from '../models/User';
 
 class UserController {
@@ -81,6 +82,21 @@ class UserController {
     } catch (e) {
       return console.log(e);
     }
+  }
+
+  async search(req, res) {
+    const { letter } = req.params;
+
+    const users = await User.findAll({
+      where: {
+        user_name: {
+          [Sequelize.Op.iLike]: `${letter}%`,
+        },
+      },
+      order: [['user_name', 'DESC']],
+    });
+
+    res.json(users);
   }
 }
 
